@@ -1,0 +1,36 @@
+                                                 ----------------------------
+                                                  Sum of distinct elements
+                                                 ---------------------------- 
+
+var array1 = ['3', '1', '7', '9'], 
+    array2 = ['2', '4', '1', '9', '3'],
+    array3 = array1.filter(function(n) { return array2.indexOf(n) == -1; }),
+    array4 = array2.filter(function(n){return array1.indexOf(n) == -1;}),
+    sum = 0;
+
+for (let i = 0; i < array3.length; i++) {
+    sum += parseInt(array3[i])
+}
+
+for (let i = 0; i < array4.length; i++) {
+    sum += parseInt(array4[i])
+}
+
+Output: 13
+                                                 ----------------------------
+                                                  Sum of overlapped elements
+                                                 ---------------------------- 
+                              
+var array1 = ['3', '1', '7', '9'],
+    array2 = ['2', '4', '1', '9', '3'],
+    sum = 0,
+    filteredArray = array1.filter(function(n) {
+    return array2.indexOf(n) !== -1;
+});
+for (let i = 0; i < filteredArray.length; i++){
+  sum += parseInt(filteredArray[i]) * 2
+}
+
+Output: 26
+
+
